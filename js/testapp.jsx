@@ -1,5 +1,9 @@
 const MyTitle = function(props) {
-  return React.createElement('div', null, React.createElement('h1', { style: { color: props.color } }, props.title));
+  return React.createElement(
+    'div',
+    null,
+    React.createElement('h1', { style: { color: props.color } }, props.title)
+  );
 };
 
 const MyFirstComponent = function() {
@@ -12,4 +16,7 @@ const MyFirstComponent = function() {
   );
 };
 
-ReactDOM.render(React.createElement(MyFirstComponent), document.getElementById('app'));
+ReactDOM.render(
+  React.createElement(MyFirstComponent),
+  document.getElementById('app')
+);
