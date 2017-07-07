@@ -1,3 +1,6 @@
+import React from 'react';
+import { render } from 'react-dom';
+
 const MyTitle = function(props) {
   return React.createElement(
     'div',
