@@ -12,8 +12,8 @@ const Header = (props: {
   if (props.showSearch) {
     utilSpace = (
       <input
-        onChange={this.handleSearchTermChange}
-        value={this.state.searchTerm}
+        onChange={props.handleSearchTermChange}
+        value={props.searchTerm}
         type="text"
         placeholder="Search"
       />
@@ -27,13 +27,16 @@ const Header = (props: {
       </h2>
     );
   }
-  <header>
-    <h1>
-      <Link to="/">
-        svideo
-      </Link>
-    </h1>
-  </header>;
+  return (
+    <header>
+      <h1>
+        <Link to="/">
+          svideo
+        </Link>
+      </h1>
+      {utilSpace}
+    </header>
+  );
 };
 
 Header.defaultProps = {
