@@ -4,7 +4,7 @@ const webpack = require('webpack');
 module.exports = {
   context: __dirname,
   entry: [
-    'webpack-hot-middleware/client?path=__webpack_hmr&timeout=2000',
+    'webpack-hot-middleware/client?path__webpack_hmr&timeout=2000',
     './js/TestApp.jsx'
   ],
   devtool: 'cheap-eval-source-map',
