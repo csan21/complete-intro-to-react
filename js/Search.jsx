@@ -7,7 +7,7 @@ import Header from './Header';
 
 const Search = (props: {
   searchTerm: string, // eslint-disable-line react/no-unused-prop-types
-  shows: Array<show>
+  shows: Array<Show>
 }) => (
   <div className="search">
     <Header showSearch />
