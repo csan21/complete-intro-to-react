@@ -4,9 +4,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import type { RouterHistory } from 'react-router-dom';
+import { object } from 'prop-types';
 import { setSearchTerm } from './actionCreators';
 
 class Landing extends Component {
+  static contextTypes = {
+    history: object
+  };
   props: {
     searchTerm: string,
     handleSearchTermChange: Function,
@@ -25,8 +29,9 @@ class Landing extends Component {
             onChange={this.props.handleSearchTermChange}
             value={this.props.searchTerm}
             type="text"
-            placeholder="Search"
+            placeholder="Name of TV Show"
           />
+          <input className="button" type="submit" value="Search" />
         </form>
         <Link to="/search">or Browse All</Link>
       </div>
