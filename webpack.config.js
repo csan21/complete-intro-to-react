@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
-module.exports = {
+const config = {
   context: __dirname,
   entry: [
     'webpack-hot-middleware/client?path__webpack_hmr&timeout=2000',
@@ -19,7 +19,11 @@ module.exports = {
     historyApiFallback: true
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json']
+    extensions: ['.js', '.jsx', '.json'],
+    alias: {
+      react: 'preact-compat',
+      'react-dom': 'preact-compat'
+    }
   },
   stats: {
     colors: true,
@@ -40,8 +44,20 @@ module.exports = {
       },
       {
         test: /\.jsx?$/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+        include: [
+          path.resolve('js'),
+          path.resolve('node_modules/preact-compat/src')
+        ]
       }
     ]
   }
 };
+
+if (process.env.NODE_ENV === 'production') {
+  config.entry = './js/TestApp.jsx';
+  config.devtool = false;
+  config.plugins = [];
+}
+
+module.exports = config;
