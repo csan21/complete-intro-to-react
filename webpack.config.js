@@ -3,11 +3,10 @@ const webpack = require('webpack');
 
 const config = {
   context: __dirname,
-  entry: [
-    'webpack-hot-middleware/client?path__webpack_hmr&timeout=2000',
-    './js/TestApp.jsx'
-  ],
-  devtool: 'cheap-eval-source-map',
+  entry: ['./js/TestApp.jsx'],
+  devtool: process.env.NODE_ENV === 'development'
+    ? 'cheap-eval-source-map'
+    : false,
   output: {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
@@ -54,10 +53,10 @@ const config = {
   }
 };
 
-if (process.env.NODE_ENV === 'production') {
-  config.entry = './js/TestApp.jsx';
-  config.devtool = false;
-  config.plugins = [];
+if (process.env.NODE_ENV === 'development') {
+  config.entry.unshift(
+    'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000'
+  );
 }
 
 module.exports = config;

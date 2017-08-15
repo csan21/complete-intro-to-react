@@ -13,11 +13,11 @@ class AsyncRoute extends Component {
       this.setState({ loaded: true });
     });
   }
+  component = null;
   props: {
     props: mixed,
     loadingPromise: Promise<{ default: Class<React.Component<*, *, *>> }>
   };
-  component = null;
   render() {
     if (this.state.loaded) {
       return <this.component {...this.props.props} />;

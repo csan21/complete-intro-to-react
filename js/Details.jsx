@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import getAPIDetails from './asyncActions';
+import { getAPIDetails } from './actionCreators';
 import Header from './Header';
 import Spinner from './Spinner';
 
@@ -65,4 +65,5 @@ const mapDispatchToProps = (dispatch: Function, ownProps) => ({
     dispatch(getAPIDetails(ownProps.show.imdbID));
   }
 });
+
 export default connect(mapStateToProps, mapDispatchToProps)(Details);
