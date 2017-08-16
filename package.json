@@ -4,7 +4,7 @@
     "build": "NODE_ENV=production webpack -p",
     "build:dev": "NODE_ENV=development webpack -d",
     "dev": "webpack-dev-server",
-    "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"js/**/*.{js,jsx}\"",
+    "format": "prettier --write --single-quote --print-width=80 --parser=flow --tab-width=2 \"js/**/*.{js,jsx}\"",
     "lint": "eslint **/*.{js,jsx} --quiet",
     "start": "NODE_ENV=server node server.js",
     "test": "jest",
@@ -13,7 +13,9 @@
     "watch": "webpack --watch"
   },
   "jest": {
-    "snapshotSerializers": ["jest-serializer-enzyme"]
+    "snapshotSerializers": [
+      "jest-serializer-enzyme"
+    ]
   },
   "dependencies": {
     "axios": "0.16.1",
@@ -40,6 +42,7 @@
     "webpack-hot-middleware": "2.18.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "babel-core": "6.24.1",
     "babel-eslint": "7.2.3",
     "babel-loader": "7.0.0",
@@ -48,6 +51,7 @@
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-plugin-transform-es2015-modules-commonjs": "6.24.1",
     "babel-preset-env": "1.5.1",
+    "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "6.24.1",
     "enzyme": "2.8.2",
     "eslint": "3.19.0",
@@ -61,7 +65,7 @@
     "eslint-plugin-jsx-a11y": "5.0.3",
     "eslint-plugin-prettier": "2.1.1",
     "eslint-plugin-react": "7.0.1",
-    "flow-bin": "0.47.0",
+    "flow-bin": "^0.52.0",
     "jest": "20.0.4",
     "jest-serializer-enzyme": "1.0.0",
     "moxios": "0.4.0",
