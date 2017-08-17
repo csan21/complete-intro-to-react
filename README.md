@@ -2,8 +2,9 @@
 
 Netflix-style app built in React with Redux, ES6, JSX, Flow, Webpack, & more
 
-FrontEndMasters Online Course: Learning React v3 by Brian Holt @
-https://github.com/btholt/complete-intro-to-react/tree/start
+FrontEndMasters Online Course: Learning React v3 by Brian Holt
+
+@ https://github.com/btholt/complete-intro-to-react/tree/start
 
 ## A Complete Intro to React
 
