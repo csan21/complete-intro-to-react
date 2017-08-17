@@ -23,7 +23,7 @@ class Landing extends Component {
   render() {
     return (
       <div className="landing">
-        <h1>svideo</h1>
+        <h1>webflix</h1>
         <form onSubmit={this.goToSearch}>
           <input
             onChange={this.props.handleSearchTermChange}
