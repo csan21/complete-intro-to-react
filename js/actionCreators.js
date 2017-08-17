@@ -11,7 +11,7 @@ export function addAPIData(apiData: Show) {
   return { type: ADD_API_DATA, payload: apiData };
 }
 
-export default function getAPIDetails(imdbID: string) {
+export function getAPIDetails(imdbID: string) {
   return (dispatch: Function) => {
     axios
       .get(`http://localhost:3000/${imdbID}`)
